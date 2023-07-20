@@ -6,14 +6,16 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.4.1",
-    "@sidebase/nuxt-auth": "^0.4.3",
-    "nuxt": "^3.2.3",
-    "@next-auth/prisma-adapter": "^1.0.5",
-    "prisma": "^4.11.0"
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "nuxt": "^3.6.5",
+    "prisma": "^5.0.0",
+    "ts-node": "^10.9.1"
   },
   "dependencies": {
-    "@prisma/client": "^4.11.0"
+    "@prisma/client": "^5.0.0"
   }
 }

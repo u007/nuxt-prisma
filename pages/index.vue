@@ -1,7 +1,11 @@
 <template>
     <div>
         <NuxtLink to="/posts">go blog</NuxtLink>
+        <div v-if="!loading && error">
+            {{ error }}
+        </div>
         <div>
+            {{ posts }}
             <button @click="signIn(undefined, { callbackUrl: '/' })">
                 sign in
             </button>
@@ -22,20 +26,8 @@
 </template>
 
 <script setup>
-const {
-    status,
-    data,
-    getSession,
-    signIn,
-    signOut,
-} = await useSession({
-    // Whether a session is required. If it is, a redirect to the signin page will happen if no active session exists
-    required: false
+
+const { data: posts, pending, error, refresh } = await useFetch('/api/posts',{
 })
 
-// Session status: `unauthenticated`, `loading`, `authenticated`
-// status.value
-console.log(status.value);
-
-console.log(data.value);
 </script>

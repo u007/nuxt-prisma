@@ -6,8 +6,17 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+enum PostType {
+  QUESTION
+  NEWS
+  DOCUMENT
+  FORM
+  BLOG
+  OTHER
 }
 
 model Post {
@@ -17,6 +26,8 @@ model Post {
   published Boolean @default(false)
   author    User?   @relation(fields: [authorId], references: [id])
   authorId  String?
+
+  postType PostType @default(QUESTION)
 }
 
 model Account {
