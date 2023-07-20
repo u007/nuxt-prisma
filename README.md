@@ -15,6 +15,11 @@ npm install
 
 # pnpm
 pnpm install --shamefully-hoist
+
+# local dev only
+npx prisma migrate dev
+
+
 ```
 
 ## Development Server

@@ -1,5 +1,5 @@
 
-import { PrismaClient } from '@prisma/client'
+import { PostType, PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 async function main() {
@@ -14,6 +14,7 @@ async function main() {
           title: 'Check out Prisma with Next.js',
           content: 'https://www.prisma.io/nextjs',
           published: true,
+          postType: PostType.NEWS,
         },
       },
     },
@@ -30,6 +31,7 @@ async function main() {
             title: 'Follow Prisma on Twitter',
             content: 'https://twitter.com/prisma',
             published: true,
+            postType: PostType.NEWS,
           },
           {
             title: 'Follow Nexus on Twitter',
